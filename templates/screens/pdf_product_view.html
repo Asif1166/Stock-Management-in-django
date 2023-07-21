@@ -1,0 +1,64 @@
+<div class="table-responsive">
+<table class="table  datanew">
+<thead>
+<tr>
+<th>
+<label class="checkboxs">
+<input type="checkbox" id="select-all">
+<span class="checkmarks"></span>
+</label>
+</th>
+
+
+
+<th>Product Name</th>
+<th>Category </th>
+<th>Quantity</th>
+<th>Price</th>
+
+<th>Last Update</th>
+<th>Action</th>
+</tr>
+</thead>
+<tbody>
+{% for item in items %}
+<tr>
+<td>
+<label class="checkboxs">
+<input type="checkbox">
+<span class="checkmarks"></span>
+</label>
+</td>
+
+
+  
+
+<td class="productimgname">
+<a href="javascript:void(0);" class="product-img">
+<img src="{{ item.image.url }}" alt="product">
+</a>
+<a href="javascript:void(0);">{{ item.item_name }}</a>
+</td>
+<td>{{ item.category }} </td>
+<td>{{ item.quantity }}</td>
+
+<td>{{ item.price }} Taka</td>
+<td>{{ item.last_update }}</td>
+
+
+<td>
+
+</a>
+</td>
+</tr>
+
+{% endfor %}
+
+
+
+
+
+
+</tbody>
+</table>
+</div>

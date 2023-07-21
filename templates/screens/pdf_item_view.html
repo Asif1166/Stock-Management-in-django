@@ -1,0 +1,95 @@
+{% extends "layout/body.html" %}
+{% load static %}
+
+{% block body %}
+<div class="main-wrapper">
+
+
+
+
+<div class="page-wrapper">
+<div class="content">
+<div class="page-header">
+<div class="page-title">
+<h4>Product Details</h4>
+<h6>Full details of a product</h6>
+</div>
+</div>
+
+<div class="row">
+<div class="col-lg-8 col-sm-12">
+<div class="card">
+<div class="card-body">
+
+<div class="productdetails">
+<ul class="product-bar">
+<li>
+<h3>Product --------  {{ items.item_name }}</h3>
+
+</li>
+<li>
+<h3>Category -------- {{ items.category }}</h3>
+
+</li>
+<li>
+<h3>Quantity -------- {{ items.quantity }}</h3>
+
+</li>
+<li>
+<h3>Last Receive quantity -------- {{ items.receive_quantity }}</h3>
+
+</li>
+<li>
+<h3>Last Issue quantity -------- {{ items.issue_quantity }}</h3>
+
+</li>
+<li>
+<h3>price -------- {{ items.price }} Taka</h3>
+
+</li>
+<li>
+<h3>Vendor -------- {{ items.vendor }}</h3>
+
+</li>
+<li>
+<h3>Last Update -------- {{ items.last_update }}</h3>
+
+</li>
+
+
+
+
+</ul>
+
+
+
+
+
+</div>
+</div>
+</div>
+</div>
+<div class="col-lg-4 col-sm-12">
+<div class="card">
+<div class="card-body">
+<div class="slider-product-details">
+<div class="owl-carousel owl-theme product-slide">
+<div class="slider-product">
+<img src="{{ items.image.url }}" alt="img">
+
+</div>
+
+
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+</div>
+</div>
+</div>
+
+
+{% endblock body %}

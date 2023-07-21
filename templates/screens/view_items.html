@@ -1,0 +1,101 @@
+{% extends "layout/body.html" %}
+{% load static %}
+
+{% block body %}
+<div class="main-wrapper">
+
+{% include "layout/header.html" %}
+{% include "layout/sidebar.html" %}
+
+
+<div class="page-wrapper">
+<div class="content">
+<div class="page-header">
+<div class="page-title">
+<h4>Product Details</h4>
+<h6>Full details of a product</h6>
+</div>
+
+<a href="{% url 'pdf_report_item' items.id %}" data-bs-toggle="tooltip" data-bs-placement="top" title="pdf"><img src="/static/assets/img/icons/pdf.svg" alt="img"> Download PDF</a>
+
+</div>
+
+<a href="{% url 'issue_items' items.id %}"><button class="btn btn-danger">ISSUE THIS ITEM</button></a>
+<a href="{% url 'receive_items' items.id %}"><button class="btn btn-success">RECEIVE THIS ITEM</button></a>
+
+
+<div class="row">
+
+<div class="col-lg-8 col-sm-12">
+<div class="card">
+<div class="card-body">
+
+
+<div class="productdetails">
+
+<ul class="product-bar">
+<li>
+<h4>Product</h4>
+<h6>{{ items.item_name }} </h6>
+</li>
+<li>
+<h4>Category</h4>
+<h6>{{ items.category }}</h6>
+</li>
+<li>
+<h4>Quantity</h4>
+<h6>{{ items.quantity }}</h6>
+</li>
+<li>
+<h4>Last Receive quantity</h4>
+<h6>{{ items.receive_quantity }}</h6>
+</li>
+<li>
+<h4>Last Issue quantity</h4>
+<h6>{{ items.issue_quantity }}</h6>
+</li>
+<li>
+<h4>price</h4>
+<h6>{{ items.price }} Taka</h6>
+</li>
+<li>
+<h4>Vendor</h4>
+<h6>{{ items.vendor }}</h6>
+</li>
+<li>
+<h4>Last Update</h4>
+<h6>{{ items.last_update }}</h6>
+</li>
+
+
+
+
+</ul>
+</div>
+</div>
+</div>
+</div>
+
+<div class="col-lg-4 col-sm-12">
+<div class="card">
+<div class="card-body">
+<div class="slider-product-details">
+<div class="owl-carousel owl-theme product-slide">
+<div class="slider-product">
+    
+<img src="{{ items.image.url }}" alt="img">
+
+</div>
+
+
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+</div>
+</div>
+</div>
+{% endblock body %}
